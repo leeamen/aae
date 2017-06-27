@@ -151,10 +151,10 @@ class AdversarialAutoencoder(object):
     history = History()
     vae_callbacks.append(history)
 
-    csvlogger = CSVLogger(filename = str(self.config.latent_dim) + 'ave_training.log')
+    csvlogger = CSVLogger(filename = str(self.config.latent_dim) + 'vae_training.log')
     vae_callbacks.append(csvlogger)
 
-    checkpointer = ModelCheckpoint( filepath = str(self.config.latent_dim) + 'ave_weights.hdf5', verbose=0, save_best_only=True, save_weights_only=True) 
+    checkpointer = ModelCheckpoint( filepath = str(self.config.latent_dim) + 'vae_weights.hdf5', verbose=0, save_best_only=True, save_weights_only=True) 
     vae_callbacks.append(checkpointer)
 
     history1 = History()
